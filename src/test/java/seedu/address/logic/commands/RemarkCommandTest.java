@@ -6,12 +6,16 @@ import static seedu.address.logic.commands.CommandTestUtil.*;
 import static seedu.address.logic.commands.RemarkCommand.MESSAGE_ARGUMENTS;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
+import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
 import seedu.address.model.Model;
+import seedu.address.model.ModelManager;
+import seedu.address.model.UserPrefs;
 
 import org.junit.jupiter.api.Test;
 
 public class RemarkCommandTest {
+    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
     @Test
     public void execute() {
         final String remark = "Some remark";
