@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 
 /**
  * Represents a Person's remark in the address book.
- * Guarantees: immutable; is valid as declared in {@link #isValidAddress(String)}
+ * Guarantees: immutable
  */
 public class Remark {
     public final String value;
@@ -29,5 +29,6 @@ public class Remark {
     public int hashCode() {
         return value.hashCode();
     }
+
 
 }
