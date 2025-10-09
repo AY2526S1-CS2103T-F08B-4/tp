@@ -9,7 +9,6 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Grade {
 
-
     public static final String MESSAGE_CONSTRAINTS_CONSTRUCT =
             "Grade should be a number between 0.00 and 100.00, with exactly 2 decimal places.";
 
