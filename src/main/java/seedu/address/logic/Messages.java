@@ -43,8 +43,12 @@ public class Messages {
             .append(person.getEmail())
             .append("; TeleHandle: ")
             .append(person.getTeleHandle())
+            .append("; Tutorial Group: ")
+            .append(person.getTutorialGroup())
             .append("; GradeMap: ")
             .append(person.getGradeMap())
+            .append("; AttendMap: ")
+            .append(person.getAttendMapAsStringMap())
             .append("; Tags: ");
         person.getTags().forEach(builder::append);
         return builder.toString();

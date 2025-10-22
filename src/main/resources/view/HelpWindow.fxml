@@ -51,7 +51,7 @@
                 <Text text=" - the grade to be given(numerical grade)" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-fill: white;"/>
             </TextFlow>
             <TextFlow>
-                <Label text="t/TUTORIAL" id="sampleCommandLabel"/>
+                <Label text="tg/TUTORIAL_GROUP" id="sampleCommandLabel"/>
                 <Text text=" - the tutorial group for that student" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-fill: white;"/>
             </TextFlow>
 

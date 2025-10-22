@@ -5,6 +5,7 @@
     "phone" : "94351253",
     "email" : "alice@example.com",
     "teleHandle": "@alice",
+    "tutorialGroup": "TG01",
     "gradeMap" : {
       "Q1" : " ",
       "Q2" : " ",
@@ -14,6 +15,19 @@
       "Q6" : " ",
       "Q7" : " ",
       "Finals" : " "
+    },
+    "attendMap" : {
+      "t1" : "0",
+      "t2" : "0",
+      "t3" : "0",
+      "t4" : "0",
+      "t5" : "0",
+      "t6" : "0",
+      "t7" : "0",
+      "t8" : "0",
+      "t9" : "0",
+      "t10" : "0",
+      "t11" : "0"
     },
     "tags" : [ "friends" ]
   }, {
@@ -21,6 +35,7 @@
     "phone" : "98765432",
     "email" : "johnd@example.com",
     "teleHandle": "@benson",
+    "tutorialGroup": "TG02",
     "gradeMap" : {
       "Q1" : " ",
       "Q2" : " ",
@@ -30,6 +45,19 @@
       "Q6" : " ",
       "Q7" : " ",
       "Finals" : " "
+    },
+    "attendMap" : {
+      "t1" : "0",
+      "t2" : "0",
+      "t3" : "0",
+      "t4" : "0",
+      "t5" : "0",
+      "t6" : "0",
+      "t7" : "0",
+      "t8" : "0",
+      "t9" : "0",
+      "t10" : "0",
+      "t11" : "0"
     },
     "tags" : [ "owesMoney", "friends" ]
   }, {
@@ -37,6 +65,7 @@
     "phone" : "95352563",
     "email" : "heinz@example.com",
     "teleHandle": "@carl",
+    "tutorialGroup": "TG01",
     "gradeMap" : {
       "Q1" : " ",
       "Q2" : " ",
@@ -46,6 +75,19 @@
       "Q6" : " ",
       "Q7" : " ",
       "Finals" : " "
+    },
+    "attendMap" : {
+      "t1" : "0",
+      "t2" : "0",
+      "t3" : "0",
+      "t4" : "0",
+      "t5" : "0",
+      "t6" : "0",
+      "t7" : "0",
+      "t8" : "0",
+      "t9" : "0",
+      "t10" : "0",
+      "t11" : "0"
     },
     "tags" : [ ]
   }, {
@@ -53,6 +95,7 @@
     "phone" : "87652533",
     "email" : "cornelia@example.com",
     "teleHandle": "@daniel",
+    "tutorialGroup": "TG03",
     "gradeMap" : {
       "Q1" : " ",
       "Q2" : " ",
@@ -62,6 +105,19 @@
       "Q6" : " ",
       "Q7" : " ",
       "Finals" : " "
+    },
+    "attendMap" : {
+      "t1" : "0",
+      "t2" : "0",
+      "t3" : "0",
+      "t4" : "0",
+      "t5" : "0",
+      "t6" : "0",
+      "t7" : "0",
+      "t8" : "0",
+      "t9" : "0",
+      "t10" : "0",
+      "t11" : "0"
     },
     "tags" : [ "friends" ]
   }, {
@@ -69,6 +125,7 @@
     "phone" : "9482224",
     "email" : "werner@example.com",
     "teleHandle": "@elle",
+    "tutorialGroup": "TG02",
     "gradeMap" : {
       "Q1" : " ",
       "Q2" : " ",
@@ -78,6 +135,19 @@
       "Q6" : " ",
       "Q7" : " ",
       "Finals" : " "
+    },
+    "attendMap" : {
+      "t1" : "0",
+      "t2" : "0",
+      "t3" : "0",
+      "t4" : "0",
+      "t5" : "0",
+      "t6" : "0",
+      "t7" : "0",
+      "t8" : "0",
+      "t9" : "0",
+      "t10" : "0",
+      "t11" : "0"
     },
     "tags" : [ ]
   }, {
@@ -85,6 +155,7 @@
     "phone" : "9482427",
     "email" : "lydia@example.com",
     "teleHandle": "@fiona",
+    "tutorialGroup": "TG03",
     "gradeMap" : {
       "Q1" : " ",
       "Q2" : " ",
@@ -95,12 +166,26 @@
       "Q7" : " ",
       "Finals" : " "
     },
+    "attendMap" : {
+      "t1" : "0",
+      "t2" : "0",
+      "t3" : "0",
+      "t4" : "0",
+      "t5" : "0",
+      "t6" : "0",
+      "t7" : "0",
+      "t8" : "0",
+      "t9" : "0",
+      "t10" : "0",
+      "t11" : "0"
+    },
     "tags" : [ ]
   }, {
     "name" : "George Best",
     "phone" : "9482442",
     "email" : "anna@example.com",
     "teleHandle": "@george",
+    "tutorialGroup": "TG01",
     "gradeMap" : {
       "Q1" : " ",
       "Q2" : " ",
@@ -110,6 +195,19 @@
       "Q6" : " ",
       "Q7" : " ",
       "Finals" : " "
+    },
+    "attendMap" : {
+      "t1" : "0",
+      "t2" : "0",
+      "t3" : "0",
+      "t4" : "0",
+      "t5" : "0",
+      "t6" : "0",
+      "t7" : "0",
+      "t8" : "0",
+      "t9" : "0",
+      "t10" : "0",
+      "t11" : "0"
     },
     "tags" : [ ]
   } ]

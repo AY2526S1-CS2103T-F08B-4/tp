@@ -44,7 +44,6 @@ public class AddressBookParserTest {
         AddCommand command = (AddCommand) parser.parseCommand(PersonUtil.getAddCommand(person));
         assertEquals(new AddCommand(person), command);
     }
-
     @Test
     public void parseCommand_clear() throws Exception {
         assertTrue(parser.parseCommand(ClearCommand.COMMAND_WORD) instanceof ClearCommand);
@@ -115,5 +114,45 @@ public class AddressBookParserTest {
     @Test
     public void parseCommand_unknownCommand_throwsParseException() {
         assertThrows(ParseException.class, MESSAGE_UNKNOWN_COMMAND, () -> parser.parseCommand("unknownCommand"));
+    }
+
+    @Test
+    public void fuzzyMatch_addCommand() throws Exception {
+        assertEquals(AddCommand.COMMAND_WORD, parser.fuzzyMatch(AddCommand.FUZZY_COMMAND_WORD));
+    }
+
+    @Test
+    public void fuzzyMatch_clearCommand() throws Exception {
+        assertEquals(ClearCommand.COMMAND_WORD, parser.fuzzyMatch(ClearCommand.FUZZY_COMMAND_WORD));
+    }
+
+    @Test
+    public void fuzzyMatch_deleteCommand() throws Exception {
+        assertEquals(DeleteCommand.COMMAND_WORD, parser.fuzzyMatch(DeleteCommand.FUZZY_COMMAND_WORD));
+    }
+
+    @Test
+    public void fuzzyMatch_exitCommand() throws Exception {
+        assertEquals(ExitCommand.COMMAND_WORD, parser.fuzzyMatch(ExitCommand.FUZZY_COMMAND_WORD));
+    }
+
+    @Test
+    public void fuzzyMatch_findCommand() throws Exception {
+        assertEquals(FindCommand.COMMAND_WORD, parser.fuzzyMatch(FindCommand.FUZZY_COMMAND_WORD));
+    }
+
+    @Test
+    public void fuzzyMatch_gradeCommand() throws Exception {
+        assertEquals(GradeCommand.COMMAND_WORD, parser.fuzzyMatch(GradeCommand.FUZZY_COMMAND_WORD));
+    }
+
+    @Test
+    public void fuzzyMatch_helpCommand() throws Exception {
+        assertEquals(HelpCommand.COMMAND_WORD, parser.fuzzyMatch(HelpCommand.FUZZY_COMMAND_WORD));
+    }
+
+    @Test
+    public void fuzzyMatch_listCommand() throws Exception {
+        assertEquals(ListCommand.COMMAND_WORD, parser.fuzzyMatch(ListCommand.FUZZY_COMMAND_WORD));
     }
 }

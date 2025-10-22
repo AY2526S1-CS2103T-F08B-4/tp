@@ -15,6 +15,8 @@ import seedu.address.model.person.Grade;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.TeleHandle;
+import seedu.address.model.person.TutorialClass;
+import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -165,5 +167,31 @@ public class ParserUtil {
             throw new ParseException(Assignments.MESSAGE_CONSTRAINTS);
         }
         return Assignments.fromString(trimmedAssignment);
+    }
+
+    /**
+     * Parses {@code String tutorialGroup} into an {@code TutorialGroup}.
+     */
+    public static TutorialGroup parseTutorialGroup(String tutorialGroup) throws ParseException {
+        requireNonNull(tutorialGroup);
+        String trimmedTutorial = tutorialGroup.trim();
+        if (!TutorialGroup.isValidTutorial(trimmedTutorial)) {
+            throw new ParseException(TutorialGroup.MESSAGE_CONSTRAINTS);
+        }
+        return new TutorialGroup(trimmedTutorial);
+    }
+
+    /**
+     * Parses {@code String tutClass} into an {@code TutorialClass}.
+     */
+    public static TutorialClass parseTutorialClass(String tutClass) throws ParseException {
+        requireNonNull(tutClass);
+        String trimmedTutClass = tutClass.trim();
+
+        // Don't allow empty tutorial class values, inside command
+        if (trimmedTutClass.isEmpty() || !TutorialClass.isValidTutorialClass(trimmedTutClass)) {
+            throw new ParseException(TutorialClass.MESSAGE_CONSTRAINTS);
+        }
+        return TutorialClass.fromString(trimmedTutClass);
     }
 }

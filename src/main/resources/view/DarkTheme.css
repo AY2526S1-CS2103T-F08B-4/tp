@@ -337,16 +337,21 @@
     -fx-background-radius: 0;
 }
 
-#tags {
+#tutorialGroupAndTags {
     -fx-hgap: 7;
     -fx-vgap: 3;
+    -fx-padding: 3 0 3 0;
 }
 
-#tags .label {
+#tutorialGroupAndTags .label {
     -fx-text-fill: white;
     -fx-background-color: #3e7b91;
     -fx-padding: 1 3 1 3;
     -fx-border-radius: 2;
     -fx-background-radius: 2;
     -fx-font-size: 11;
+}
+
+#tutorialGroupAndTags .tutorial-label {
+    -fx-background-color: #2e7134;
 }

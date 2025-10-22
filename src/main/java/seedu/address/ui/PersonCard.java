@@ -41,7 +41,9 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label grade;
     @FXML
-    private FlowPane tags;
+    private FlowPane tutorialGroupAndTags;
+    @FXML
+    private Label attend;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -53,10 +55,17 @@ public class PersonCard extends UiPart<Region> {
         name.setText(person.getName().fullName);
         phone.setText(person.getPhone().value);
         teleHandle.setText(person.getTeleHandle().value);
+        String tutorialGroup = person.getTutorialGroup().value;
+        if (!tutorialGroup.isEmpty()) {
+            Label tutorialLabel = new Label(tutorialGroup);
+            tutorialLabel.getStyleClass().add("tutorial-label");
+            tutorialGroupAndTags.getChildren().add(tutorialLabel);
+        }
         email.setText(person.getEmail().value);
         grade.setText(person.getOverallGrade().value);
+        attend.setText(person.getOverallAttendance());
         person.getTags().stream()
             .sorted(Comparator.comparing(tag -> tag.tagName))
-            .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+            .forEach(tag -> tutorialGroupAndTags.getChildren().add(new Label(tag.tagName)));
     }
 }

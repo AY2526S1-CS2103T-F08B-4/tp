@@ -4,6 +4,7 @@
     "phone": "94351253",
     "email": "alice@example.com",
     "teleHandle": "@alice",
+    "tutorialGroup": "TG01",
     "gradeMap" : {
       "Q1" : " ",
       "Q2" : " ",
@@ -14,11 +15,25 @@
       "Q7" : " ",
       "Finals" : " "
     },
+    "attendMap" : {
+      "t1" : "0",
+      "t2" : "0",
+      "t3" : "0",
+      "t4" : "0",
+      "t5" : "0",
+      "t6" : "0",
+      "t7" : "0",
+      "t8" : "0",
+      "t9" : "0",
+      "t10" : "0",
+      "t11" : "0"
+    },
     "tags": [ "friends" ]
   }, {
     "name": "Alice Pauline",
     "phone": "94351253",
     "email": "pauline@example.com",
+    "tutorialGroup": "TG01",
     "gradeMap" : {
       "Q1" : " ",
       "Q2" : " ",
@@ -28,6 +43,19 @@
       "Q6" : " ",
       "Q7" : " ",
       "Finals" : " "
+    },
+    "attendMap" : {
+      "t1" : "0",
+      "t2" : "0",
+      "t3" : "0",
+      "t4" : "0",
+      "t5" : "0",
+      "t6" : "0",
+      "t7" : "0",
+      "t8" : "0",
+      "t9" : "0",
+      "t10" : "0",
+      "t11" : "0"
     },
     "teleHandle": "@alice"
   } ]

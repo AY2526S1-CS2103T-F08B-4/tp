@@ -6,18 +6,21 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TELEHANDLE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL_GROUP;
 
 import java.util.Set;
 import java.util.stream.Stream;
 
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.person.AttendMap;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.GradeMap;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.TeleHandle;
+import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -41,7 +44,13 @@ public class AddCommandParser implements Parser<AddCommand> {
      */
     public AddCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
-            ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_TELEHANDLE, PREFIX_TAG);
+            ArgumentTokenizer.tokenize(args,
+                    PREFIX_NAME,
+                    PREFIX_PHONE,
+                    PREFIX_EMAIL,
+                    PREFIX_TELEHANDLE,
+                    PREFIX_TUTORIAL_GROUP,
+                    PREFIX_TAG);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_TELEHANDLE, PREFIX_PHONE, PREFIX_EMAIL)
             || !argMultimap.getPreamble().isEmpty()) {
@@ -53,10 +62,21 @@ public class AddCommandParser implements Parser<AddCommand> {
         Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         TeleHandle teleHandle = ParserUtil.parseTeleHandle(argMultimap.getValue(PREFIX_TELEHANDLE).get());
+        String tutorialGroupString = argMultimap.getValue(PREFIX_TUTORIAL_GROUP)
+                .orElse(TutorialGroup.DEFAULT_TUTORIAL_GROUP);
+        TutorialGroup tutorialGroup = ParserUtil.parseTutorialGroup(tutorialGroupString);
         GradeMap defaultGradeMap = new GradeMap();
+        AttendMap defaultAttendMap = new AttendMap();
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
-        Person person = new Person(name, phone, email, teleHandle, defaultGradeMap, tagList);
+        Person person = new Person(name,
+                phone,
+                email,
+                teleHandle,
+                tutorialGroup,
+                defaultGradeMap,
+                defaultAttendMap,
+                tagList);
 
         return new AddCommand(person);
     }

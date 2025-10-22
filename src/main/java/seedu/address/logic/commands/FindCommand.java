@@ -14,6 +14,7 @@ import seedu.address.model.person.PersonContainsKeywords;
 public class FindCommand extends Command {
 
     public static final String COMMAND_WORD = "find";
+    public static final String FUZZY_COMMAND_WORD = "findd";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds persons by name, email, telegram handle, "
             + "or tutorial group (tag).\n"
