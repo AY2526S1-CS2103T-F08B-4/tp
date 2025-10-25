@@ -17,6 +17,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
 public class ParserUtilTest {
@@ -179,4 +180,33 @@ public class ParserUtilTest {
 
         assertEquals(expectedTagSet, actualTagSet);
     }
+
+    @Test
+    public void parseTutorialGroup_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseTutorialGroup((String) null));
+    }
+
+    @Test
+    public void parseTutorialGroup_invalidValue_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseTutorialGroup("")); // empty string
+        assertThrows(ParseException.class, () -> ParserUtil.parseTutorialGroup(" ")); // spaces only
+        assertThrows(ParseException.class, () -> ParserUtil.parseTutorialGroup("TG@1")); // invalid characters
+    }
+
+    @Test
+    public void parseTutorialGroup_validValueWithoutWhitespace_returnsTutorialGroup() throws Exception {
+        String validTutorialGroupString1 = "TG01";
+        String validTutorialGroupString2 = "01";
+        TutorialGroup expectedTutorialGroup = new TutorialGroup("TG01");
+        assertEquals(expectedTutorialGroup, ParserUtil.parseTutorialGroup(validTutorialGroupString1));
+        assertEquals(expectedTutorialGroup, ParserUtil.parseTutorialGroup(validTutorialGroupString2));
+    }
+
+    @Test
+    public void parseTutorialGroup_validValueWithWhitespace_returnsTrimmedTutorialGroup() throws Exception {
+        String tutorialGroupStringWithWhitespace = WHITESPACE + "TG01" + WHITESPACE;
+        TutorialGroup expectedTutorialGroup = new TutorialGroup("TG01");
+        assertEquals(expectedTutorialGroup, ParserUtil.parseTutorialGroup(tutorialGroupStringWithWhitespace));
+    }
+
 }

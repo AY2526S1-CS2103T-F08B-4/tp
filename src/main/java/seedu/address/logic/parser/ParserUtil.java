@@ -174,7 +174,10 @@ public class ParserUtil {
      */
     public static TutorialGroup parseTutorialGroup(String tutorialGroup) throws ParseException {
         requireNonNull(tutorialGroup);
-        String trimmedTutorial = tutorialGroup.trim();
+        String trimmedTutorial = tutorialGroup.trim().toUpperCase();
+        if (!trimmedTutorial.startsWith("TG")) {
+            trimmedTutorial = "TG" + trimmedTutorial;
+        }
         if (!TutorialGroup.isValidTutorial(trimmedTutorial)) {
             throw new ParseException(TutorialGroup.MESSAGE_CONSTRAINTS);
         }
