@@ -41,18 +41,11 @@ public class ParserUtil {
         String trimmedIndex = oneBasedIndex.trim();
         String[] parts = trimmedIndex.split("\\s+");
         if (!StringUtil.isNonZeroUnsignedInteger(trimmedIndex)) {
-            // if there is one an only one digit in the string
-            if (trimmedIndex.matches("^\\D*\\d\\D*$")) {
-                try {
-                    if (Integer.parseInt(trimmedIndex) <= 0) {
-                        throw new ParseException(MESSAGE_MISSING_INDEX);
-                    }
-                    throw new ParseException(MESSAGE_MISSING_FIELDS);
-                } catch (NumberFormatException e) {
+            if (parts.length > 1) {
+                // if there is one an only one digit in the string
+                if (trimmedIndex.matches("^\\D*\\d\\D*$")) {
                     throw new ParseException(MESSAGE_MISSING_FIELDS);
                 }
-            }
-            if (parts.length > 1) {
                 throw new ParseException(MESSAGE_ENTERED_MULTIPLE_INDEXES);
             } else {
                 throw new ParseException(MESSAGE_MISSING_INDEX);
