@@ -74,11 +74,11 @@ public class EditCommandParserTest {
     @Test
     public void parse_invalidPreamble_failure() {
         // negative index
-        assertParseFailure(parser, "-5" + NAME_DESC_AMY, MESSAGE_MISSING_FIELDS + "\n\n"
+        assertParseFailure(parser, "-5" + NAME_DESC_AMY, MESSAGE_MISSING_INDEX + "\n\n"
             + MESSAGE_INVALID_FORMAT);
 
         // zero index
-        assertParseFailure(parser, "0" + NAME_DESC_AMY, MESSAGE_MISSING_FIELDS + "\n\n"
+        assertParseFailure(parser, "0" + NAME_DESC_AMY, MESSAGE_MISSING_INDEX + "\n\n"
             + MESSAGE_INVALID_FORMAT);
 
         // invalid arguments being parsed as preamble
