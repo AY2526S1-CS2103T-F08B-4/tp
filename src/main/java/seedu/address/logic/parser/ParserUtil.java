@@ -1,6 +1,7 @@
 package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.Messages.MESSAGE_ENTERED_MULTIPLE_INDEXES;
 import static seedu.address.logic.Messages.MESSAGE_MISSING_FIELDS;
 import static seedu.address.logic.Messages.MESSAGE_MISSING_INDEX;
 
@@ -38,10 +39,17 @@ public class ParserUtil {
      */
     public static Index parseIndex(String oneBasedIndex) throws ParseException {
         String trimmedIndex = oneBasedIndex.trim();
+        String[] parts = trimmedIndex.split("\\s+");
         if (!StringUtil.isNonZeroUnsignedInteger(trimmedIndex)) {
             // if there is one an only one digit in the string
             if (trimmedIndex.matches("^\\D*\\d\\D*$")) {
+                if (Integer.parseInt(trimmedIndex) <= 0) {
+                    throw new ParseException(MESSAGE_MISSING_INDEX);
+                }
                 throw new ParseException(MESSAGE_MISSING_FIELDS);
+            }
+            if (parts.length > 1) {
+                throw new ParseException(MESSAGE_ENTERED_MULTIPLE_INDEXES);
             } else {
                 throw new ParseException(MESSAGE_MISSING_INDEX);
             }

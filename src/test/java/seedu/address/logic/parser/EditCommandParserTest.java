@@ -1,5 +1,6 @@
 package seedu.address.logic.parser;
 
+import static seedu.address.logic.Messages.MESSAGE_ENTERED_MULTIPLE_INDEXES;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.Messages.MESSAGE_MISSING_FIELDS;
 import static seedu.address.logic.Messages.MESSAGE_MISSING_INDEX;
@@ -59,7 +60,7 @@ public class EditCommandParserTest {
     @Test
     public void parse_missingParts_failure() {
         // no index specified
-        assertParseFailure(parser, VALID_NAME_AMY, MESSAGE_MISSING_INDEX
+        assertParseFailure(parser, VALID_NAME_AMY, MESSAGE_ENTERED_MULTIPLE_INDEXES
             + "\n\n" + MESSAGE_INVALID_FORMAT);
 
         // no field specified
